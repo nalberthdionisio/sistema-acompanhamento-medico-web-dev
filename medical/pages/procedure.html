@@ -1,0 +1,9 @@
+{% extends 'medical/base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<form action="{%url 'createproc'%}" method='post'>{% csrf_token %}
+{{formproc|crispy}}
+<input type="submit" value="salvar">
+</form>
+<a href="{%url 'show_procedure'%}">voltar</a>
+{% endblock body %}

@@ -1,0 +1,148 @@
+{% extends 'medical/base.html' %}
+{% load static %}
+{%block css%}
+  <link rel="stylesheet" href="../../static/medical/css/home.css">
+  <link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%}
+{% block body %}
+
+
+<div class="container">
+  {% include 'medical/pages/component/loading.html' %}
+
+  <section class="section-home contain">
+    <div id="home" class="c-home ">
+      <div class="c-home__col-1">
+        <header class="c-header">
+            <nav class="d-flex gap-5 justify-content-evenly align-items-center p-3">
+              <a class="p-2" href="#home">INÍCIO </a>
+              <a class="p-2" href="#more">SAIBA MAIS</a>
+              <a class="p-2" href="#contact"> CONTATE-NOS</a>
+            </nav>
+        </header>
+        
+        <form action="{%url 'login'%}" method="POST">{% csrf_token %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="alert {{message.tags}}">
+                      {{message}}
+                  </div>
+              {% endfor %}
+          {% endif %}
+          
+          <span class="logo">
+            <img src="{% static 'medical/img/logo.png'%}" alt="">
+          </span>
+          <div class="field">
+            <label for="user">Usuario</label>
+
+            <input id="user" type="text" name='username' placeholder="Ex.: Adm@123">
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input id="password" type="password" name='senha' placeholder="Ex.: 123456">
+          </div>
+          {% comment %} <p>Esqueceu sua senha? <a href="{%url 'resetPassword'%}">Clique aqui</a></p> {% endcomment %}
+          
+          <input class="btn-personalized" type="submit" value="Entrar">
+        </form>
+      </div>
+
+      <div class="c-home__col-2">
+        <img src="../../../static/medical/img/Group 73.svg">
+        <h2>Gerencie seus atendimentos</h2>
+        <p>Organize sua agenda,  acompanhe seus pacientes, unifique seus dados.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="section-more contain">
+    <div id="more" class="c-more c-size" >
+      <div class="what-is">
+        <div class="text">
+          <h2>O QUE É O T-Clinico?</h2>
+          <p>
+            O T-Clinica é um sistema de gerenciamento que atua como um facilitador de 
+            tarefas para clinicas de atendimento médico. 
+            O sistema foi pensado como um auxiliar de atendimento que facilita a vida do atendente administrativo, auxiliando no acompanhamento dos pacientes. 
+            Os seus pacientes recebem a lista de procedimentos pelo seu aplicativo móvel 
+            e as informações vem direto para o sistema da sua empresa.
+          </p>
+        </div>
+        <img src="{% static '../../../static/medical/img/celular2.png' %}" alt="">
+      </div>
+      
+      <div class="benefits">
+        <h2>QUAIS SÃO AS VANTAGENS PARA A SUA EMPRESA?</h2>
+        <ul>
+          <li>
+            <i class="ph-clipboard-text"></i>
+            <h4>Acompanhe seus paciêntes</h4>
+            <p>O paciente recebe a lista com seus exames e 
+              consultas no seu celular e informa seu progresso que é apresentado
+              na tela do seu sistema.
+            </p>
+          </li>
+
+          <li>
+            <i class="ph-chart-pie-slice"></i>
+            <h4>Gerencie seus atendimentos</h4>
+            <p>
+              Tenha seus atendimentos em um só lugar, 
+              reunidos de forma organizada para facilitar seu dia-a-dia.
+            </p>
+
+          </li>
+
+          <li>
+            <i class="ph-calendar"></i>
+            <h4>Acompanhe sua agenda</h4>
+            <p>Marque suas consultas, agende retornos e visualize tudo diretamente no sistema.</p>
+          </li>
+          <li>
+            <i class="ph-folder-notch-plus"></i>
+            <h4>Organize seus dados </h4>
+            <p>
+              Coloque suas informações no sistema e deixe a gente organiza-las pra você.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="developed-by">
+    <div>
+      <h2>Desenvolvido por:</h2>
+
+      <div>
+        <img class="logoNexti" src="../../../static/medical/img/logotipo-nexti.png" >
+        
+        <p class="nexti">Núcleo de Extensão em Tecnologia da Informação</p>
+      </div>
+    </div>
+  </section>
+  <footer class="contain">
+    <div class="footer-home">
+      <div id="contact" class="footer-text">
+        <h3>Problemas com o seu sistema? Contate-nos.</h3>
+        <p> 
+          <i class="ph-envelope"></i>
+          <span>nalberthdionisio@aluno.fapce.edu.br</span>
+        </p>
+        <p> 
+          <i class="ph-envelope"></i>
+          <span>kaio.santos@aluno.fapce.edu.br</span>
+        </p>
+        <p> 
+          <i class="ph-envelope"></i>
+          <span>nexti@fapce.edu.br</span>
+        </p>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+{% endblock body %}

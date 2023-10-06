@@ -1,0 +1,272 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background: #ffffff;
+
+}
+
+.c-home{
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+
+}
+
+.c-home__col-1{
+  width: 50%;
+  border: 0;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff
+}
+
+.c-header > nav > a{
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #2B4061;
+  transition: 250ms;
+}
+
+.c-header > nav > a:hover{
+  color: #D4AF37;
+  transition: 250ms;
+}
+
+.c-home__col-1 form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.logo{
+  margin-bottom: 2rem;
+}
+
+.field label{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #284061;
+}
+
+input::placeholder{
+  color: #d9d9d9;
+}
+.field input{
+  width: 23rem;
+  height: 3.4rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.c-home__col-1  form p {
+  font-size: 0.9rem;
+  
+}
+
+.c-home__col-1  form p > a{
+  font-weight: 700;
+  text-decoration: underline;
+  color: #284061;
+}
+
+.btn-personalized{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2B4061;
+  background: #D4AF37;
+  padding: 0.55rem 7rem;
+  border: none;
+  border-radius: 18px;
+}
+
+.c-home__col-2{
+  display: flex;
+  width: 55%;
+  background-image: url(../img/BACKGROUND.png);
+  background-size: 100% 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.c-home__col-2 p{
+  padding-top: .5rem;
+  width: 22rem;
+  text-align: center;
+  font-size: .95rem;
+}
+.c-home__col-2 img{
+  padding-bottom: 3rem;
+  width: 45%;
+}
+
+.c-home__col-2 .content-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-home__col-2 .content-info__text{
+  text-align: center;
+  color: #fff;
+}
+
+.content-info__text .title{
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom:16px
+
+}
+
+.content-info__text p{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.section-more{
+  min-height: 100vh;
+
+}
+.c-more{
+  background-image: url(../img/BACKGROUND\ G.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  color: #fff;
+}
+
+.what-is{
+ 
+  display: flex;
+  padding: 8rem 2rem 0rem;
+
+}
+
+.text{
+  width: 55%;
+}
+.what-is .text p{
+  padding-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.what-is img{
+  width: 25rem;
+    height: 20rem;
+    margin-left: 8%;
+
+}
+
+.ph-calendar{
+  color: #D4AF37;
+}
+
+.ph-chart-pie-slice{
+  color: #D4AF37;
+}
+.ph-folder-notch-plus{
+  color: #D4AF37;
+}
+.ph-clipboard-text{
+  color: #D4AF37;
+}
+
+.benefits i{
+  padding-bottom: 2rem;
+}
+
+.benefits{
+  padding: 0rem 2rem 5rem;
+  
+}
+.benefits ul{
+  font-weight: 200;
+  color: #fff;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding-left: 0rem;
+}
+
+.benefits li{
+  text-align: center;
+  width: 16rem;
+}
+
+.benefits h4{
+  padding-bottom: 1rem;
+}
+
+.ph-clipboard-text, .ph-chart-pie-slice, .ph-calendar, .ph-folder-notch-plus{
+  font-size: 3rem;
+}
+
+.developed-by{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #284061;
+}
+
+.developed-by h2{
+  font-weight: bolder;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.developed-by div {
+  text-align: center;
+  padding: 2rem 0;
+}
+.footer-home{
+  background-image: url('../img/footer-home.png');
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+.footer-home h3{
+  padding-bottom: 2rem;
+}
+
+.footer-text{
+  color: #fff;
+  padding: 13rem 2rem 2rem;
+}
+
+.footer-text p{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+}
+
+.footer-text span {
+  color: #fff;
+}
+
+.logoNexti{
+  padding: 1rem;
+}
+
+.nexti {
+  font-size: 1.2rem;
+  font-weight: 600;
+} 

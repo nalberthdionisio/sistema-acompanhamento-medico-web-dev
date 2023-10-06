@@ -1,0 +1,9 @@
+{% extends 'medical/base.html' %}
+{% block body %}
+{% load crispy_forms_tags %}
+<form action="{%url 'createreco'%}" method='POST' enctype="multipart/form-data">{% csrf_token %}
+    {{formreco|crispy}}
+<input type="submit" value="salvar">
+</form>
+<a href="{%url 'show_recommendation'%}">voltar</a>
+{%endblock%}

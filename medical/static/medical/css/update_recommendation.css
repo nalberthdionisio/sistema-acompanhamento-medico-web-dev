@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+label{
+    margin: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.title{
+    padding-top: 20px;
+}
+
+.listra-title{
+    border-left: 3px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.avatar-input{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.name-input{
+    width: 82%;
+} 
+
+.phone-input{
+    float: right;
+    width: 40%;
+    margin-right: 200px;
+}
+
+.email-input{
+    float: left;
+    width: 40%;
+} 
+
+.number-input{
+    float: left;
+    width: 40%;
+    
+}
+
+.street-input{
+    float: right;
+    width: 40%;
+    margin-right: 200px;
+
+}
+
+.btn{
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding-right: 200px;
+}
+
+.btn-create{
+    height: 45px;
+    width: 250px;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 20px;
+    background-color: #d5af36;
+}
+
+
+
+
+.bi-house{
+    color:#fff
+}
+
+.bi-person{
+    color: #fff;
+}
+
+.bi-file-earmark-medical{
+    color: #fff;
+}
+
+.bi-building{
+    color: #D5AF36;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}

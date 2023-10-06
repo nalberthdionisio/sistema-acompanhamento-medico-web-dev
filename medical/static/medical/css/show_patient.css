@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn-create{
+    color: #fff;
+    background-color: #D5AF36;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    height: 2.8rem;
+    width: 100px;
+    margin-top: 1.3rem;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.btn-create:hover{
+    background-color: #e0c466;
+    color:white;
+}
+
+.listra-title{
+    border-left: 3px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+}
+
+
+.exames-indicados{
+    margin-bottom: 10px;
+}
+
+.table>:not(caption)>*>*{
+    padding: 0 0;
+}
+
+.table{
+    border-collapse:separate ;
+    border-spacing: 0 0px;
+    padding: 0;
+}
+
+td{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding-left: 15px;
+    color: #284061;
+    font-weight: bold;
+}
+
+p{
+    padding: 10px;
+    margin: 5px;
+}
+
+th{
+    padding: 15px;
+}
+
+.title{
+    padding-top: 30px;
+}
+
+.title-table{
+    margin-left: 20PX;
+    padding: 0;
+    color: #D5AF36;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.listra{
+    border-left: 5px solid #D5AF36;
+}
+
+.accordion-toggle td {
+
+    cursor: pointer;    
+}
+
+.table.listra {
+    border-left: 5px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.item-table{
+    padding-left: 10px;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0px 0;
+}
+
+.table{
+    padding: 15px 0;
+}
+
+.pencil{
+    width: 20px;
+    height: 20px;
+    filter: saturate(2%) ;
+}
+.pencil:hover{
+    filter: saturate(100%);
+    transition: 500ms;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.gear{
+    width: 20px; 
+}
+
+.gear:hover{
+    color: rebeccapurple;
+}
+
+.trash{
+    width: 20px;
+    height: 20px;
+    filter: saturate(2%);
+}
+.trash:hover{
+    filter: saturate(100%);
+    transition: 400ms;
+}
+
+/*botao de procedimento concluido*/
+.fa-regular{
+    display: flex;
+    margin:2px;
+    font-size: 20px;
+}
+.fa-regular:hover{
+    opacity: 0.4;
+}
+
+
+.icons-column {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+
+
+
+
+.bi-house{
+    color:#fff
+}
+
+.bi-person{
+    color: #D5AF36;
+}
+
+.bi-file-earmark-medical{
+    color: #fff;
+}
+
+.bi-building{
+    color: #fff;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}

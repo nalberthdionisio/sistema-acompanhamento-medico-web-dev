@@ -1,0 +1,10 @@
+{% extends 'medical/base.html' %}
+{% block body %}
+
+<form action="" method='post'>{% csrf_token %}
+{{formproc}}
+<input type="submit" value="salvar">
+</form>
+
+<a href="{%url 'show_procedure'%}">voltar</a>
+{% endblock body %}

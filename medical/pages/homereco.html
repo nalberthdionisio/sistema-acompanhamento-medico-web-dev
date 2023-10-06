@@ -1,0 +1,24 @@
+{% extends 'medical/base.html' %}
+{% block body %}
+{% for r in reco %}
+  {%for procedure in r.procedure.all%}
+  isso é Procedimento
+    <ul>
+      <li>
+        {{procedure.title}}
+        {{procedure.description}}
+        {{procedure.days_limit}}
+
+      </li>
+    </ul>
+  {% endfor %}
+<ul>
+  <li>{{r.name}}</li>
+
+</ul>
+    <a href="{%url 'update_recommendation' r.id%}">Editar</a>
+    <a href="{%url 'delete_recommendation' r.id%}">Deletar</a>
+{% endfor %}
+
+<a href="{%url 'reco'%}">Adicionar</a>
+{% endblock body %}

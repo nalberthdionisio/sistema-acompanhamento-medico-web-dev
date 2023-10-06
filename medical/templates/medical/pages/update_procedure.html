@@ -1,0 +1,37 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+{% block header%} {%endblock header%} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/scrollbar.css"/>
+<link rel="stylesheet" href="../../static/medical/css/update_procedure.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%} {% block body %} {%include 'medical/basebar.html'%}
+
+<div class="container">
+    {% include 'medical/pages/component/loading.html' %}
+  <div class="title">
+    <h2 class="listra-title">Editar procedimento</h2>
+  </div>
+  <div>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div>
+        <div class="title-input">
+            {{formproc.title|as_crispy_field}}
+        </div>
+        <div class="days-limit-input">
+          {{formproc.days_limit|as_crispy_field}}
+        </div>
+      </div>
+      <div class="description-input" >
+        {{formproc.description|as_crispy_field}}
+      </div>
+      <div class="recommendation-input">
+        {{formproc.recommendation|as_crispy_field}}
+      </div>
+      <div class="btn">
+        <a href="{%url 'show_recommendation'%}"><button class='btn-create' title="Editar">Salvar</button></a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock body %}

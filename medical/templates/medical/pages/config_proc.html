@@ -1,0 +1,49 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+{% block header%} {%endblock header%} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css" />
+<link rel="stylesheet" href="../../static/medical/css/config_proc.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%} {% block body %} {%include 'medical/basebar.html'%}
+
+<div class="container">
+{% include 'medical/pages/component/loading.html' %}
+
+    <div class="title">
+    <h2 class="listra-title">Configuração de procedimento</h2>
+</div>
+<div class="dates">
+    <form>
+        <div class="card-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Procedimento</th>
+                    <th scope="col">Data Limite</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for userproc in userproc %}
+                        <a href="{% url 'patient_config' userproc.id %}">
+                            <tr>
+                            <td>{{ userproc.user.username }}</td>
+                            <td>{{ userproc.procedure.title }}</td>
+                            <td>{{ userproc.date_limit}}</td>
+                            <td>{% if userproc.type_procedure == False %}Pos {% else %}Pre{% endif %}</td>
+                            <td><a href="{% url 'patient_config' userproc.id %}"><img class="pencil" title="Editar" src="../../static/medical/icon/pencil-solid.svg"></a></td>
+                            </tr>
+                        </a>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+    
+</div>
+{% endblock body %}
+

@@ -1,0 +1,101 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+{% block header%} {%endblock header%} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/search.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css" />
+<link rel="stylesheet" href="../../static/medical/css/show_recommendation.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/modalDelete.css" /> 
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%} {% block body %} {%include 'medical/basebar.html'%}
+
+<div class="container">
+  {% include 'medical/pages/component/loading.html' %}
+
+  <div class="title">
+    <h2 class="listra-title">Recomendação</h2>
+  </div>
+  {% include 'medical/pages/component/search.html' %}
+  <div >
+    <a href="{%url 'reco' %}"><button class='btn-create' title="Cadastrar uma recomendação">Cadastrar</button></a>
+  </div>
+  <div class="background-table">
+    <table class="table table-light">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" style="padding: 15px; padding-right: 90px;">Instituição</th>
+          <th scope="col" style="padding: 15px; padding-right: 90px;"></th>
+          <th scope="col" style="padding: 15px; padding-right: 90px;"></th>
+          <th scope="col" style="padding: 15px;">opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reco in reco %}
+        <tr data-toggle="collapse" data-target="#{{reco.id}}" class="accordion-toggle">
+          <td class="listra" style="padding: 15px; margin: 0;">{{reco.name}}</td>
+          <td style="padding: 15px;"></td>
+          <td style="padding: 15px;"></td>
+          <td style="padding: 15px;"><a href="{% url 'update_recommendation' reco.id %}"><img class="pencil" title="Editar" src="../../static/medical/icon/pencil-solid.svg"></a>
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal{{ reco.id }}"  style="margin-left:10px;"><img class="trash" title="excluir" src="../../static/medical/icon/trash-solid.svg"></a></td>
+          
+          
+          <!-- Modal -->
+          {% include 'medical/pages/component/modalDeleteReco.html' with mensagem='Gostaria de deletar esta recomendação?' %}
+        </tr>
+        <tr>
+          <td colspan="12" class="hiddenRow">
+                <div class="accordian-body collapse" id="{{reco.id}}">
+              <table class="table listra">
+                <td class="title-table" scope="col" style="padding: 15px;">DADOS DA EMPRESA</th>
+                <tr>
+                   <td>
+                    <div class="item-table">
+                      <ul>Telefone:</ul>
+                      <p>{{reco.phone}}</p>
+                    </div>
+                    <div class="item-table">
+                      <ul>Email:</ul>
+                      <p>{{user.email}}</p>
+                    </div>
+                    <div class="item-table">
+                      <ul>Endereço:</ul>
+                      <p>{{reco.street}}</p>
+                    </div>
+                  </td>
+                  <td>
+                    {% for proc in proc%}
+                    <div class="exames-indicados">
+                      <ul>{{proc.title}} - {{proc.created_at|date:"d/m/Y"}}</ul>
+                    </div>
+                    {% endfor %}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div class="container_pagination">
+    <nav aria-label="Page-navigation">
+        <ul class="pagination">
+            {% if reco.has_previous %}
+                <li class="page-item ">
+                    <a class="page-link" href="?page={{reco.previous_page_number}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                </li>
+            {% endif %}
+            <li class="page-item"><a class="page-link" href="#">Página {{reco.number}} de {{reco.paginator.num_pages}}</a></li>
+            {% if reco.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{reco.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span></a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+</div>
+ {% endblock body %}

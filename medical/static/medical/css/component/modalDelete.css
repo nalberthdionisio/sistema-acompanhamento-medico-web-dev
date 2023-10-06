@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.btn-delete a{
+    text-decoration: none;
+    outline: none;
+ 
+}
+
+.btn-delete{
+    background-color: #D5AF36;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    height: 2.5rem;
+    width: 100px;
+}
+
+.btn-delete:hover{
+    filter:brightness(70%)
+}
+
+.btn-closed{
+    background-color: gray;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    height: 2.5rem;
+    width: 100px;
+}
+
+.btn-closed:hover{
+    filter:brightness(70%)
+}

@@ -1,0 +1,39 @@
+{% extends 'medical/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block header%}
+{%endblock header%} 
+
+{%block css%}
+  <link rel="stylesheet" href="../../static/medical/css/show_procedure.css">
+  <link rel="stylesheet" href="../../static/medical/css/basebar.css">
+{%endblock css%}
+
+{% block body %}
+{% include 'medical/basebar.html' %}
+<div class='content'>
+{{user}} está logado
+    {%for p in proc%}
+        {% for reco in p.recommendation.all %}
+        <ul>
+            <li>{{reco.name}}</li>
+        </ul>
+        {% endfor %}
+    <ul>
+        <li>{{p.title}}</li>
+        <li> {{p.description}} - {{p.days_limit}} Dias</li>
+    </ul>
+    <div class='btn-show_procedure'>
+        <a href="{%url 'delete_procedure' p.id%}">Deletar</a>
+    </div>
+    <div class='btn-show_procedure'>
+        <a href="{%url 'update_procedure' p.id%}">Editar</a>
+    </div>
+        
+    {%endfor%}
+    <div class='btn-show_procedure'>
+        <a href="{%url 'procedure'%}">Adicionar</a>
+    </div>
+
+</div>
+{% endblock body %}

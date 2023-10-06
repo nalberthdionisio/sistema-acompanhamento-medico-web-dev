@@ -1,0 +1,31 @@
+{% extends 'medical/base.html' %}
+{%load static%}
+{% block header %}
+
+{%endblock header %}
+{%block css%}<link rel="stylesheet" href="../../static/medical/css/geral.css">{%endblock css%}
+{% block body%}
+<div class="opera">
+  <img src="{% static 'medical/img/logo.png'%}" alt="Logo">
+</div>
+<br>
+<br>
+    <div class="container1">
+        <form action="{%url 'cadastro'%}" method="POST">{% csrf_token %}
+          <center><h4>Cadastrar Paciente</h4></center>
+            <br>
+            <label>Nome</label>
+            <br>
+            <input placeholder="Digite seu Username" type="text" name="username" class="form-control">
+            <br>
+            <label>Email</label>
+            <br>
+            <input placeholder="Digite seu Email" type="email" name="email" class="form-control">
+            <br>
+            <label>Senha</label>
+            <input placeholder="Digite sua senha" type="password" name="senha" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-dark medio">Cadastrar Usuário</button>
+        </form>
+    </div>
+{%endblock body%}

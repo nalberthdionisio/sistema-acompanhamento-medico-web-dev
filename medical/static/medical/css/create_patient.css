@@ -1,0 +1,209 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    margin-left: 6rem;
+}
+
+.listra-title{
+    border-left: 3px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+    margin-left: 20px;
+    margin-bottom: 3rem;
+    color: black;
+}
+
+.div-flex{
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.form-create_patient form input{
+    min-width: auto;
+}
+
+.name-input{
+    width: 40%;
+} 
+.email-input{
+    width: 30%;
+}
+.phone-input{
+    width: 20%;
+}
+
+
+.number-input{
+    width: 35%;
+}
+.CPF-input{
+    width: 40%;
+}
+.data-input{
+    width: 15%;
+} 
+
+
+.street-input{
+    width: 30%;
+}
+.district-input{
+    width: 30%;
+}
+.association-input{
+    width: 30%;
+}
+.uf-input{
+    width: 50%;
+
+}
+
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+label{
+    color: black;
+}
+
+.procedure-field .procedure-check label{
+margin-bottom: 10px;
+}
+
+.procedure-field{
+    display: flex;
+    justify-content: space-between; 
+    
+}
+
+.procedure-check{
+    box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    background-color: #fff;
+    text-align: center;
+    justify-content: center;
+    font-weight: 800;
+    padding-top: 1rem;
+    margin-left: 20px;
+    color: #2B4061;
+    font-size: 1.3rem;
+    height: 300px;
+    width: 30%;
+    scroll-snap-align: none;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll ;
+}
+
+.procedure-check img{
+    width: 35px;
+    height: 28px;
+}
+
+
+.form-check{
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: 100;
+    text-transform: capitalize;
+
+    margin-left: 20px;
+}
+
+.form-check-input:checked{
+    background-color: #D5AF36;
+    border: #D5AF36;
+}
+
+/*imagem decorativa*/
+.image{
+    margin-top: 30px;
+    width: auto;
+    height: 310px;
+}
+/* Botão do formulário */
+.btn{
+    display: flex;
+    border: none;
+    cursor: auto;
+    justify-content: center;
+}
+
+.btn-create{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #D5AF36;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    height: 2.8rem;
+    width: 15rem;
+}
+
+ 
+/* Barra de Rolagem Procedure-check */
+.procedure-check::-webkit-scrollbar {
+    width: 10px;      
+      
+}
+
+.procedure-check::-webkit-scrollbar-track {
+    background: none;
+    padding-top: 3px;   
+}
+
+.procedure-check::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    height: 2px;
+    padding-top: 3px;   
+}
+
+/* Barra de Rolagem do uf-input */
+.uf-input::-webkit-scrollbar {
+    width: 10px;         
+}
+
+.uf-input::-webkit-scrollbar-track {
+    background: none;
+    padding-top: 3px;   
+}
+
+.uf-input::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    height: 2px;
+    padding-top: 3px;   
+}
+
+
+
+
+.bi-house{
+    color:#fff
+}
+
+.bi-person{
+    color: #D5AF36;
+}
+
+.bi-file-earmark-medical{
+    color: #fff;
+}
+
+.bi-building{
+    color: #fff;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}

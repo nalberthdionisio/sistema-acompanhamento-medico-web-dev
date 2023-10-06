@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.table>:not(caption)>*>*{
+    padding: 0 0;
+}
+
+td{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding-left: 15px;
+    color: #284061;
+    font-weight: bold;
+}
+
+p{
+    padding: 10px;
+    margin: 5px;
+
+}
+
+th{
+    padding: 15px;
+}
+
+.title{
+    padding-top: 30px;
+}
+
+.title-table{
+    margin-left: 20PX;
+    padding: 0;
+    color: #D5AF36;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.listra{
+    border-left: 5px solid #D5AF36;
+}
+
+.accordion-toggle td {
+    padding-left: 15px;
+    cursor: pointer;    
+}
+
+.table.listra {
+    border-left: 5px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.item-table{
+    padding-left: 10px;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0px 0;
+}
+
+.table{
+    padding: 15px 0;
+}
+
+.pencil{
+    width: 20px;
+    height: 20px;
+    filter: saturate(2%) ;
+}
+.pencil:hover{
+    filter: saturate(100%);
+    transition: 500ms;
+}
+.trash{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    filter: saturate(2%);
+}
+.trash:hover{
+    filter: saturate(100%);
+    transition: 400ms;
+}
+
+
+
+
+
+.bi-house{
+    color:#fff
+}
+
+.bi-person{
+    color: #fff;
+}
+
+.bi-file-earmark-medical{
+    color: #fff;
+}
+
+.bi-building{
+    color: #D5AF36;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}

@@ -1,0 +1,54 @@
+{% extends 'medical/base.html' %}
+{%load static%}
+{% load crispy_forms_tags %}    
+{% block header%}
+{%endblock header%}
+{%block css%}
+<link rel="stylesheet" href="../../static/medical/css/show_patient.css">
+<link rel="stylesheet" href="../../static/medical/css/basebar.css">
+{%endblock css%}
+{% block body %}
+{%include 'medical/basebar.html'%}
+    
+    <div class='section1'>
+        <h4>Todos os Pacientes</h4>
+        <div class='mini-header'>
+                <div class='p1'>
+                    <h6>Paciente</h6>
+                    {%for user in user%}
+                         
+                    <div class='flex-p'>
+                        <div class='rol'></div>
+                        <p>{{user.username}}</p>
+                    </div>
+                    {% for proc in user.procedure.all %}
+                            {% for reco in proc.recommendation.all %}
+                            <ul><li>
+                                Recomendação de {{user.username}}-{{reco.name}}
+                            </li></ul>{% endfor %}
+                        <ul>
+                            <li>
+                                Procedimento de {{user.username}}-{{proc.title}}
+                            </li>
+                        </ul>
+                        {% endfor %} 
+                    {%endfor%}
+                </div>
+            
+            <div class='p1'>
+                <h6>Data de Cadastro</h6>
+                {%for pat in pat%}
+                <div class='flex-icon'>
+                    <i class="ph-clock-thin"></i>
+                    <p>{{user.created_at}}</p>
+                </div>
+                {%endfor%}
+            </div>
+            <div class='p1'>
+                <h6>Exames vinculados</h6> 
+            </div>
+            
+        </div>
+    </div>
+
+{%endblock body%}

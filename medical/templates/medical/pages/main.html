@@ -1,0 +1,114 @@
+{% extends 'medical/base.html' %} {% load crispy_forms_tags %} {% load
+bootstrap_icons %} {% load static %} {% block header %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+{% endblock header %} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/main.css" />
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />                                                                                                               
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css"/>
+{%endblock css%} {% block body %} {% include 'medical/basebar.html' %}
+
+<div class="container">
+
+  {% include 'medical/pages/component/loading.html' %}
+
+  <div class="title">
+    <h2 class="listra-title">Dashboard</h2>
+  </div>
+
+  {% comment %} <div class="svg-main">
+    <img class="dash-img"src="../../static/medical/img/dash2.svg">
+  </div> {% endcomment %}
+
+  <div class="graficos">
+    <div class="doughnut">
+      <canvas id="doughnut" style=""></canvas>
+      <script>
+        var xValues = ["Pacientes atualizados", "Pacientes em atraso", "Pacientes aptos"];
+        var yValues = [{{atualizadosc}}, {{atrasosc}}, {{aptosc}}];
+        var barColors = [
+          
+          "#00aba9",
+          "#b91d47",
+          "#2b5797",
+        ];
+
+        new Chart("doughnut", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+          
+          }
+        });
+      </script>
+    </div>
+  </div>
+  
+    
+
+  <div class="main-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>Pacientes atualizados</h5>
+        </div>
+        <div class="card-content">
+          {% for pacientes_atualizados in atualizados %}
+          <ul class="list-card">
+            <li>
+              <i class="fa-regular fa-user"></i>
+              <p>{{pacientes_atualizados.username}}</p>
+            </li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>Pacientes em atraso</h5>
+        </div>
+        <div class="card-content">
+          {% for usuarios_atrasados in atrasos %}
+          <ul class="list-card">
+            <li>
+              <i class="fa-regular fa-clipboard"></i>
+              <p>{{usuarios_atrasados.username}}</p>
+            </li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>Pacientes aptos</h5>
+        </div>
+        <div class="card-content">
+          {% for pacientes_aptos in aptos %}
+          <ul class="list-card">
+            <li><i class="fa-regular fa-clipboard"></i>
+            <p>{{pacientes_aptos.username}}</p>
+          </li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,30 @@
+.content{
+    display: flex;
+    padding-left: 155px;
+    flex-direction: column;
+    width: 550px;
+    
+}
+.btn-primary{
+    width: 250px;
+    border-radius: 20px;
+    background-color: #336E56;
+}
+.btn-newproc{
+    padding-left: 25px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #336E56;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    height: 45px;
+    width: 250px;
+}
+.head{
+    display: flex;
+    padding-left: 90px;
+    padding-top: 20px;
+}

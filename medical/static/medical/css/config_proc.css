@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+
+.listra-title{
+    border-left: 3px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.dates{
+    margin-top: 30px;
+    background-color: #fff;
+    border: none;
+    border-radius:10px;
+    box-shadow: 0 3px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-table{
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+span{
+    color: black;
+}
+
+.dates  li {
+    list-style-type: none;
+    margin-bottom: 10px;
+
+}
+
+.dateConfigProc {
+    width: 150px; 
+    padding: 5px; 
+    margin-bottom: 10px;
+    margin-top: 10px ;
+  }
+  
+
+.user-info {
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.input-container {
+  display: inline-block;
+}
+
+
+.div-flex{
+    display: flex;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+
+
+.btn-create{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #D5AF36;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    height: 2.8rem;
+    width: 15rem;
+}
+
+
+.bi-house{
+    color:#fff
+}
+
+.bi-person{
+    color: #D5AF36;
+}
+
+.bi-file-earmark-medical{
+    color: #fff;
+}
+
+.bi-building{
+    color: #fff;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}

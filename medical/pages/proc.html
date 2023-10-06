@@ -1,0 +1,39 @@
+{% extends 'medical/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block header%}
+{%endblock header%} 
+{%block css%}
+  <link rel="stylesheet" href="../../static/medical/css/proc.css">
+  <link rel="stylesheet" href="../../static/medical/css/basebar.css">
+{%endblock css%}
+{% block body %}
+{%include 'medical/basebar.html'%}
+<div class='content'>
+    {%for procr in procr %}
+    <div class ='main1'>
+        <p class="card-text"><h6>Nome do Procedimento:</h6> {{procr.procedure}}</p>
+        <div>
+            <a class="btn btn-primary" href="{%url 'delete_procedure' procr.id%}">DEL</a>    
+        </div>
+    </div>
+        {%for recommendation in procr.recommendation.all%}
+        <div class='img-div'>
+            <img src="{{recommendation.avatar.url}}" style="width: 16rem;" class="card-img-top" alt="bug">
+        </div>   
+                        
+<ul>
+    <li class="card-text"><h6>Sugestão: </h6>{{recommendation.name}}</li>
+    <li class="card-text"><h6>Telefone: </h6>{{recommendation.phone}}</>
+    <li class="card-text"><h6>Email</h6> {{recommendation.email}}</>
+    <li class="card-text"><h6>Rua</h6> {{recommendation.street}}</lclass=>
+    <li class="card-text"><h6>Número</h6> {{recommendation.number}}</li> 
+    <div>
+        <a class="btn btn-primary" href="{%url 'delete_recommendation' recommendation.id%}">DEL</a>    
+    </div>
+</ul>                          
+        {%endfor%}
+    <hr>
+    {% endfor %}
+</div> 
+{%endblock body%}

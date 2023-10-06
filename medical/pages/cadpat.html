@@ -1,0 +1,64 @@
+{% extends 'medical/base.html' %}
+{%load static%}
+{% load crispy_forms_tags %}    
+{% block header%}
+{%endblock header%}
+{%block css%}
+<link rel="stylesheet" href="../../static/medical/css/create_patient.css">
+<link rel="stylesheet" href="../../static/medical/css/basebar.css">
+{%endblock css%}
+
+{% block body%}
+{%include 'medical/basebar.html'%}
+<div class='geral-create_patient'>
+        <div class='head'>
+            <h4>Cadastro de Pacientes</h4>
+            <p>Insira as informações do paciente no sistema para criar um novo usuário.</p>
+        </div>
+
+        <div class = 'form-create_patient'>
+            <form action="#" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class='div-flex'>
+                <div>
+                    {{formuser.username|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.email|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.password|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.avatar|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.cpf|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.birth_date|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.street|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.number|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.district|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.uf|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.phone|as_crispy_field}}
+                </div>
+                <div>
+                    {{formuser.procedure|as_crispy_field}}
+                </div>
+                <input type='submit' class='btn-create_patient' value='Continuar'> 
+            </div>
+
+            </form>
+        </div>
+    </div>
+    {%endblock body%}

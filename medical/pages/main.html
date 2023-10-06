@@ -1,0 +1,123 @@
+{% extends 'medical/base.html' %}
+{% load crispy_forms_tags %}
+{% load bootstrap_icons %}
+{% load static %}
+{% block header %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+{% endblock header %}
+{%block css%}
+  <link rel="stylesheet" href="../../static/medical/css/geral.css">
+  <link rel="stylesheet" href="../../static/medical/css/basebar.css">
+{%endblock css%}
+{% block body %}
+  {% include 'medical/basebar.html' %}
+  <section class='section2'>
+    <h6>Agenda do Mês</h6>
+    Hoje, 17 de Agosto
+    <p>Nome do Paciente</p>
+    <p>Nome do Paciente</p>
+    <p>Nome do Paciente</p>
+    <p>Nome do Paciente</p>
+  </section>
+  <main class='mainpai'>
+  <main class='pagmain'>
+    <div class='mainbut'>
+      
+      <a class="btn-main" value="Adicionar Paciente">
+        <i class="ph-user-plus-thin"></i>
+        <span>
+          Adicionar Paciente
+        </span>
+      </a>
+      <a class="btn-main" >
+        <i class="ph-folder-notch-plus-thin"></i>
+        <span>
+          Adicionar Procedimento
+        </span>
+      </a>
+      <a class="btn-main">
+        <i class="ph-files-thin"></i>
+        <span>
+          Adicionar Sugestão
+        </span>
+      </a>
+    </div>
+    <section class='section1'>
+      <canvas id="myChart" style='display: flex;'></canvas>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            //labels: ["Blue", "Yellow", "Purple", "Orange"],
+            datasets: [
+              {
+                data: [
+                80,
+                20
+                ],
+                backgroundColor: [
+                    '#0364FF',
+                    'white'
+                ],
+                label: 'Doughnut 1'
+              },
+              {
+                data: [
+                70,
+                30,
+                ],
+                backgroundColor: [
+                    '#8E30FF',
+                    'white'
+                ],
+              },
+              {
+                data: [60,40,],
+                backgroundColor: [
+                    '#FF7723',
+                    'white'
+                ],
+                label:'Doughnut2'
+              }
+            ],
+    labels: [
+      "Info 1",
+      "Info 2",
+    ]
+  
+        },
+        
+    options: {
+    //circumference:100,
+    cutoutPercentage: 30,
+    responsive: false,
+      legend: {
+        display: false,
+      }
+    }
+    });
+</script>
+      <div class='pagchart'>
+        <h6>Pacietes Ativos</h6>
+        <h6>Pacientes Desatualizados</h6>
+        <h6>Pacientes Deletados</h6>
+        
+      </section>
+      
+    </main>
+    <section class='section3'>
+      
+      <div class="rol">
+        
+        <input class="rolbut" type="submit" value="Visualizar todos os cadastros">
+      </div>
+      <div class="rol">
+        <input class="rolbut" type="submit" value="Visualizar todos os cadastros">
+      </div>
+      <div class="rol">
+        <input class="rolbut" type="submit" value="Visualizar todos os cadastros">
+      </div>
+    </section>
+  </main>
+  {% endblock body %}

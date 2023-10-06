@@ -1,0 +1,76 @@
+<div class="content">
+  <div class="card">
+    <div class="card-title">
+      <p>PACIENTES CADASTRADOS</p>
+      <div class="card-body">
+        {% for user in user%}
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            {{user.username}}
+          </ul>
+        </div>
+        {% endfor %}
+        <div class="botao">
+          <a href="{%url 'show_patient' %}" class="btn">Visualizar todos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">
+      <p>Procedimentos</p>
+      <div class="card-body">
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            Heitor Aguilar
+          </ul>
+        </div>
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            Antonio Espadas
+          </ul>
+        </div>
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            Maria Aleluia
+          </ul>
+        </div>
+        <div class="botao">
+          <a href="#" class="btn">Visualizar todos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">
+      <p>Recomendações</p>
+      <div class="card-body">
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            Heitor Aguilar
+          </ul>
+        </div>
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            Antonio Espadas
+          </ul>
+        </div>
+        <div class="itens-card">
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+          <ul>
+            Maria Aleluia
+          </ul>
+        </div>
+        <div class="botao">
+          <a href="{%url 'show_recommendation' %}" class="btn">Visualizar todos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

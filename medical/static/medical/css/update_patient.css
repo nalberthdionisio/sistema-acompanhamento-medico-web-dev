@@ -1,0 +1,259 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    margin-left: 6rem;
+}
+
+.listra-title{
+    border-left: 3px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+    margin-left: 20px;
+    margin-bottom: 3rem;
+    color: black;
+}
+
+.div-flex{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+input{
+    border: 1px solid #CED4DA;
+    height: 38px;
+    border-radius: 5px;
+}
+select{
+    border: 1px solid #CED4DA;
+    height: 38px;
+    border-radius: 5px;
+} 
+
+
+.name{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.phone{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+
+.number{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+.cpf{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+.bariatric{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+
+.street{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.district{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.association{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.uf{
+    display: flex;
+    flex-direction: column;
+    width: 17%;
+}
+
+.procedure-field{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+}
+
+.checkbox-procedure{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px 0 10px; 
+}
+
+.operatorio{
+    display: flex;
+    padding: 5px;
+}
+
+.operatorio select{
+    font-size: 20px;
+}
+
+.operatorio input{
+    margin-left: 20px;
+}
+
+.check-title{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.check-title label{
+    padding-left: 10px ;
+}
+
+input[type=checkbox]:checked {
+    position: relative;
+    cursor: pointer;
+  border: none;
+}
+
+
+.procedure-check{
+    border-radius: 10px;
+    box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 1rem;
+    margin-left: 20px;
+    font-size: 20px;
+    height: 300px;
+    width: 100%;
+    
+    scroll-snap-align: none;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll ;
+}
+    
+.image{
+    margin-top: 30px;
+    width: auto;
+    height: 310px;
+}
+
+.btn{
+    display: flex;
+    border: none;
+    cursor: auto;
+    justify-content: center;
+}
+
+.btn-create{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #D5AF36;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    height: 2.8rem;
+    width: 15rem;
+
+}
+
+.form-check{
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: 100;
+    text-transform: capitalize;
+    margin-left: 20px;
+}
+
+
+.form-check-input:checked{
+    background-color: #D5AF36;
+    border: #D5AF36;
+}
+
+
+
+select::-webkit-scrollbar {
+    width: 10px;      
+      
+}
+
+select::-webkit-scrollbar-track {
+    background: none;
+    padding-top: 3px;   
+}
+
+select::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    height: 2px;
+    padding-top: 3px;   
+}
+
+/* Barra de Rolagem Procedure-check */
+.procedure-check::-webkit-scrollbar {
+    width: 10px;      
+      
+}
+
+.procedure-check::-webkit-scrollbar-track {
+    background: none;
+    padding-top: 3px;   
+}
+
+.procedure-check::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    height: 2px;
+    padding-top: 3px;   
+}
+
+/* Barra de Rolagem do uf */
+.uf::-webkit-scrollbar {
+    width: 10px;         
+}
+
+.uf::-webkit-scrollbar-track {
+    background: none;
+    padding-top: 3px;   
+}
+
+.uf::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    height: 2px;
+    padding-top: 3px;   
+}
+

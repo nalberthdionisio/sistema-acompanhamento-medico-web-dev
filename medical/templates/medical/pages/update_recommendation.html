@@ -1,0 +1,38 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+{% block header%} {%endblock header%} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/basebar.css"/>
+<link rel="stylesheet" href="../../static/medical/css/update_recommendation.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%} {% block body %} {%include 'medical/basebar.html'%}
+
+<div class="container">
+  {% include 'medical/pages/component/loading.html' %}
+  <div class="title">
+    <h2 class="listra-title">Editar Recomendação</h2>
+  </div>
+  <div>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %} 
+      <div class="name-input">
+        {{formreco.name|as_crispy_field}}
+      </div>
+      <div class="phone-input">
+        {{formreco.phone|as_crispy_field}}
+      </div>
+      <div class="email-input">
+        {{formreco.email|as_crispy_field}}
+      </div>
+      <div class="number-input">
+        {{formreco.number|as_crispy_field}}
+      </div>
+      <div class="street-input">
+        {{formreco.street|as_crispy_field}}
+      </div>
+      <div class="btn">
+        <a href="{%url 'show_recommendation'%}"><button class='btn-create' title="Editar">Confirmar</button></a>
+      </div>
+    </form>
+  </div>
+</div>
+0{%endblock%}

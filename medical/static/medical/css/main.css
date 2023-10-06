@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    padding-top: 30px;
+}
+
+.title-table{
+    margin-left: 20PX;
+    padding: 0;
+    color: #D5AF36;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+
+.dashboard{
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 18rem;
+    margin-left: 40%;
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+.svg-main{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    height: 150px;
+}
+.dash-img{
+    width: 42%;
+}
+
+.graficos{
+    display: flex;
+    width:100%;
+
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.graficos .doughnut{
+    width:100%;
+    max-width:700px;
+    background-color: #fff;
+    border: none;
+    border-radius:10px;
+    box-shadow: 0 3px 4px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.main-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.card{
+    position: relative;
+    width: 32%;
+    height: 23rem;
+    border: none;
+    box-shadow: 0 3px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body{
+    overflow: auto;
+    max-height: 255px;
+}
+
+.card-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.list-card{
+    margin-left: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.list-card li:hover {
+    background-color: #c0c0c0;
+}
+
+
+
+.list-card li{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.list-card li i{
+    color: #D5AF36;
+    display: flex;
+    font-size: 25px;
+    margin-left: 20px;
+}
+.list-card a{
+    text-decoration: none;
+}
+
+.list-card li p{
+    margin: 0;
+    color: black;
+    padding: 0;
+    padding-left:  10px;
+    align-items: center;
+    display: flex;
+}
+
+
+
+.footer p{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+
+.bi-house{
+    color:#D5AF36
+}
+
+.bi-person{
+    color: #fff;
+}
+
+.bi-file-earmark-medical{
+    color: #fff;
+}
+
+.bi-building{
+    color: #fff;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}
+
+.card-body::-webkit-scrollbar {
+    width: 10px;               
+  }
+
+.card-body::-webkit-scrollbar-track {
+    background: white;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+    background-color: gray;    
+    border-radius: 20px;       
+    border: 3px solid none;  
+}

@@ -1,0 +1,44 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+{% block header%} {%endblock header%} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css" />
+<link rel="stylesheet" href="../../static/medical/css/patient_config.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%} {% block body %} {%include 'medical/basebar.html'%}
+
+<div class="container">
+{% include 'medical/pages/component/loading.html' %}
+
+  <div class="title">
+    <h2 class="listra-title">Configuração de procediemnto</h2>
+  </div>
+
+
+  <div class="card-itens">
+    <form method="post">
+    {% csrf_token %}
+    <div class="linhaUm">
+      <label for="nome">Nome:</label>
+      <p>{{ userproc.user.username }}</p>
+      <label for="proc">Procedimento:</label>
+      <p>{{ userproc.procedure.title }}</p> 
+      <label for="data">Data limite: </label>
+      <input type="date" id="data" name="date_limit" value="{{userproc.date_limit|date:'Y-m-d'}}">
+    </div>
+  
+    <div class="linhaDois">
+      <label class="form-label">Tipo de procedimento:</label>
+      <input type="radio" name="type_procedure" value="False" {% if not userproc.type_procedure %}checked{% endif %}>Pos op
+      <input type="radio" name="type_procedure" value="True" {% if userproc.type_procedure %}checked{% endif %}>Pre op
+    </div>
+    <div class="linhaTres">
+      <label>Procedimento Feito: </label>
+      <input type="checkbox" name="done" {% if userproc.done %}checked{% endif %}>
+    </div>
+    <div class="btn">
+      <input type="submit" class="btn-create" value="Salvar" />
+    </div>
+      </form> 
+  </div>
+</div>
+{% endblock body %}

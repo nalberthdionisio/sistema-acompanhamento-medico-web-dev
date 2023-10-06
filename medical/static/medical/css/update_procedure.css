@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+label{
+    margin: 0.8rem;
+}
+
+.title{
+    padding-top: 20px;
+}
+
+.listra-title{
+    border-left: 3px solid #D5AF36;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.title-input{
+    width: 70%;
+    float: left;
+    margin-bottom: 10px;
+
+}
+
+.days-limit-input{
+    padding-left: 20px;
+    width: 20%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.description-input{
+    width: 90%;
+}
+
+.recommendation-input{
+    display: flex;
+    align-items: center;
+}
+
+.form-check{
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.form-check-label{
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.form-check-input{
+    margin: 0;
+    border-radius: 20px;
+}
+
+.btn-create_patient{
+    margin-top: 2vh;   
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d5af36;
+    border: none;
+    border-radius: 20px;
+    height: 45px;
+    width: 250px;
+    margin-left: 21rem;
+}
+
+.btn-create{
+    margin-top: 10px;   
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d5af36;
+    border: none;
+    border-radius: 20px;
+    height: 45px;
+    width: 250px;
+    margin:0 ;
+}
+
+.btn{
+    border: none;
+    margin-left: 20rem;
+}
+
+.bi-house{
+    color:#fff
+}
+
+.bi-person{
+    color: #fff;
+}
+
+.bi-file-earmark-medical{
+    color: #D5AF36;
+}
+
+.bi-building{
+    color: #fff;
+}
+
+.bi-box-arrow-left{
+    color: #fff;
+}

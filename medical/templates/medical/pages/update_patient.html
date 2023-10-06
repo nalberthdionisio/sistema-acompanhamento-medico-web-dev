@@ -1,0 +1,110 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+
+{% block header%} {%endblock header%} {%block css%}
+
+<link rel="stylesheet" href="../../static/medical/css/patient.css" />
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/modalEditDate.css">
+{%endblock css%} {% block body%} {%include 'medical/basebar.html'%}
+
+<div class="container">
+  {% include 'medical/pages/component/loading.html' %}
+
+  <div class="title">
+    <h2 class="listra-title">Editar Paciente</h2>
+  </div>
+
+
+
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="div-flex">
+      <div class="inputs">
+        <div class="name">
+          <label for="username">Nome Completo<font color="#D5AF36">*</font></label>
+          <input class="name-input" type="text" id="username" name="username" value="{{form.username.value|default:""}}" required><br>
+        </div>
+        <div class="email">
+          <label for="email">Email<font color="#D5AF36">*</font></label>
+          <input class="email-input" type="email" id="email" name="email"  value="{{form.email.value|default:""}}" required><br>
+        </div>
+        <div class="phone">
+          <label for="phone">Celular<font color="#D5AF36">*</font></label>
+          <input type="text" id="phone" name="phone" value="{{form.phone.value|default:""}}" ><br>        
+        </div>
+      </div>
+
+
+      <div class="inputs">
+        <div class="number">
+          <label for="number">Número<font color="#D5AF36">*</font></label>
+          <input type="text" id="number" name="number" value="{{form.number.value|default:""}}"><br>
+        </div>
+        <div class="cpf">
+          <label for="cpf">CPF<font color="#D5AF36">*</font></label>
+          <input class="cpf-input" type="text" id="cpf" name="cpf" value="{{form.cpf.value|default:""}}"><br>
+        </div>
+        <div class="date">
+          <label for="birth_date">Data de Nascimento<font color="#D5AF36">*</font></label>
+          <input type="date" id="birth_date" name="birth_date" value="{{form.birth_date.value|date:'Y-m-d'}}"><br>
+        </div>
+        <div class="bariatric">
+          <label for="bariatric">Data da Cirurgia<font color="#D5AF36">*</font></label>
+          <input type="date" id="bariatric" name="bariatric" value="{{form.bariatric.value|date:'Y-m-d'}}"><br>
+        </div>
+      </div>
+      
+      <div class="inputs">
+        <div class="street">
+          <label for="street">Rua<font color="#D5AF36">*</font></label>
+          <input type="text" id="street" name="street" value="{{form.street.value|default:""}}" ><br>
+        </div>
+        <div class="district">
+          <label for="district">Bairro<font color="#D5AF36">*</font></label>
+          <input type="text" id="district" name="district" value="{{form.district.value|default:""}}"><br>
+        </div>
+        <div class="association">
+          <label for="association">Associação<font color="#D5AF36">*</font></label>
+          {{form.association|default:""}}     
+        </div>
+        <div class="uf">
+          <label for="uf">UF<font color="#D5AF36">*</font></label>
+          {{form.uf|default:""}}
+        </div>
+      </div>
+    </div>
+
+
+  
+    <div class="procedure-field">
+      <div class="procedure-check">
+        <label for="procedure">Procedimentos</label>
+        <div class="checkbox-procedure">
+          <div class="check-title">
+            {% for procedure in form.procedure %}
+            {{ procedure  }}
+            {{ procedure.date_limit }}
+            {% endfor %} 
+          </div>
+  
+          {% comment %} <div class="operatorio d-flex flex-column">
+            
+            <input type="date" id="" name="" value="">
+            <input type="date" id="" name="" value=""> {% endcomment %}
+        </div>
+        </div>
+
+      </div>
+    </div>
+    
+    
+    
+  <div class="btn">
+    <input type="submit" class="btn-create" value="Salvar" />
+  </div>
+</form>
+</div>
+  
+{%endblock body%}

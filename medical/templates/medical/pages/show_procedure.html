@@ -1,0 +1,96 @@
+{% extends 'medical/base.html' %} {%load static%} {% load crispy_forms_tags %}
+{% block header%} {%endblock header%} {%block css%}
+<link rel="stylesheet" href="../../static/medical/css/basebar.css" />
+<link rel="stylesheet" href="../../static/medical/css/show_procedure.css"/>
+<link rel="stylesheet" href="../../static/medical/css/component/search.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/scrollBar.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/modalDelete.css" />
+<link rel="stylesheet" href="../../static/medical/css/component/loading.css" />
+{%endblock css%} {% block body %} {%include 'medical/basebar.html'%}
+
+
+<div class="container">
+  {% include 'medical/pages/component/loading.html' %}
+    <div class="title">
+      <h2 class="listra-title">Procedimentos</h2>
+    </div>
+    {% include 'medical/pages/component/search.html' %}
+    <div >
+        <a href="{%url 'procedure'%}"><button class='btn-create' title="Cadastrar um exame">Cadastrar</button></a>
+    </div>
+    <div class="background-table">
+        <table class="table table-light">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col" style="padding: 15px">Exame</th>
+              <th scope="col" style="padding: 15px; padding-left: 125px">Data de cadastro</th>
+              <th scope="col" style="padding: 15px">opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for proc in proc %}
+            <tr data-toggle="collapse" data-target="#{{proc.id}}" class="accordion-toggle">
+              <td class="listra" style="padding: 15px;">{{proc.title}}</td>
+              <td style="padding: 15px; padding-left: 125px">{{u.created_at | date:"d/m/Y"}}</td>
+              <td style="padding: 15px;"><a href="{% url 'update_procedure' proc.id %}"><img class="pencil" title="Editar" src="../../static/medical/icon/pencil-solid.svg"></a>
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal{{ proc.id }}"  style="margin-left:10px;"><img class="trash" title="excluir" src="../../static/medical/icon/trash-solid.svg"></a></td>
+                
+                <!-- Modal -->
+                {% include 'medical/pages/component/modalDeleteProc.html' with mensagem='Gostaria de deletar este procedimento?' %}
+            </tr>
+            <tr>
+              <td colspan="12" class="hiddenRow">
+                    <div class="accordian-body collapse" id="{{proc.id}}">
+                  <table class="table listra">
+                    <th class="title-table" scope="col" style="padding: 15px">EXAMES INDICADOS</th>
+                    <th class="title-table" scope="col" style="padding: 15px; padding-right: 70px;">LOCAIS INDICADOS</th>
+                    <tr>
+                      <td class="contant-table">
+                        <div class="item-table">
+                          <ul >Nome:</ul>
+                          <p>{{proc.title}}</p>
+                        </div>
+                        <div class="item-table">
+                          <ul>Descrição</ul>
+                          <p>{{proc.description}}</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="sugestao">
+                          
+                        {% for procreco in proc.procedurereco_set.all%}
+                        <ul>{{procreco.recommendation.name}}</ul>
+                        {% endfor %}
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+        <div class="container_pagination">      
+            <nav aria-label="Page-navigation">
+                <ul class="pagination">
+                    {% if proc.has_previous %}
+                        <li class="page-item ">
+                            <a class="page-link" href="?page={{proc.previous_page_number}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                        </li>
+                    {% endif %}
+                    <li class="page-item"><a class="page-link" href="#">Página {{proc.number}} de {{proc.paginator.num_pages}}</a></li>
+                    {% if proc.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{proc.next_page_number}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span></a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock body %}
